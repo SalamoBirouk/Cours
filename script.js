@@ -1,35 +1,53 @@
-// Liste des cours par module
-const courses = {
-    anatomie: ["Introduction à l'Anatomie", "Système Musculaire", "Système Nerveux"],
-    physiologie: ["Introduction à la Physiologie", "Fonction Cardiaque", "Système Digestif"],
-    pathologie: ["Pathologies Respiratoires", "Pathologies Digestives", "Pathologies Neurologiques"]
-};
-
-// Fonction pour rechercher des cours
-function search() {
-    const searchTerm = document.getElementById("searchBar").value.toLowerCase();
-    const results = [];
-    for (const module in courses) {
-        results.push(...courses[module].filter(course => course.toLowerCase().includes(searchTerm)));
-    }
-    if (results.length > 0) {
-        alert("Résultats trouvés :\n" + results.join("\n"));
-    } else {
-        alert("Aucun résultat trouvé pour : " + searchTerm);
-    }
+/* Style général */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f9f9f9;
+    color: #333;
+    line-height: 1.6;
 }
 
-// Fonction pour charger les cours en fonction du module sélectionné
-function loadCourses() {
-    const module = document.getElementById("moduleSelector").value;
-    const coursesList = document.getElementById("coursesList");
-    coursesList.innerHTML = ""; // Vider la liste des cours
-
-    if (module && courses[module]) {
-        courses[module].forEach(course => {
-            const li = document.createElement("li");
-            li.textContent = course;
-            coursesList.appendChild(li);
-        });
-    }
+header {
+    background: #007bff;
+    color: white;
+    padding: 20px 10px;
+    text-align: center;
+    font-size: 1.5em;
+    font-weight: bold;
 }
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
+
+/* Barre de recherche */
+.search-bar {
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.search-bar input {
+    width: 80%;
+    max-width: 500px;
+    padding: 10px;
+    font-size: 1em;
+    border: 2px solid #007bff;
+    border-radius: 5px;
+}
+
+/* Sections des modules */
+.modules {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.module {
+    background: white;
+    border: 2px solid #007bff;
+    bord
