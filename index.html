@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plateforme Médicale</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Bienvenue sur la Plateforme Médicale</h1>
+        <p>Recherchez vos cours, résumés ou discussions médicales</p>
+    </header>
+
+    <div class="search-section">
+        <input type="text" id="searchBar" placeholder="Rechercher des cours, des sujets, des discussions...">
+        <button onclick="search()">Rechercher</button>
+    </div>
+
+    <div class="modules-section">
+        <h2>Modules Disponibles</h2>
+        <select id="moduleSelector" onchange="loadCourses()">
+            <option value="">-- Sélectionnez un module --</option>
+            <option value="anatomie">Anatomie</option>
+            <option value="physiologie">Physiologie</option>
+            <option value="pathologie">Pathologie</option>
+        </select>
+    </div>
+
+    <div class="courses-section">
+        <h2>Cours</h2>
+        <ul id="coursesList">
+            <!-- Les cours seront chargés ici -->
+        </ul>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
