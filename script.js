@@ -1,53 +1,17 @@
-/* Style général */
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background: #f9f9f9;
-    color: #333;
-    line-height: 1.6;
-}
+// Recherche dynamique
+document.addEventListener("DOMContentLoaded", function () {
+    const searchInput = document.getElementById("searchInput");
+    const modules = document.querySelectorAll(".module");
 
-header {
-    background: #007bff;
-    color: white;
-    padding: 20px 10px;
-    text-align: center;
-    font-size: 1.5em;
-    font-weight: bold;
-}
-
-.container {
-    max-width: 1200px;
-    margin: auto;
-    padding: 20px;
-}
-
-/* Barre de recherche */
-.search-bar {
-    margin: 20px 0;
-    display: flex;
-    justify-content: center;
-}
-
-.search-bar input {
-    width: 80%;
-    max-width: 500px;
-    padding: 10px;
-    font-size: 1em;
-    border: 2px solid #007bff;
-    border-radius: 5px;
-}
-
-/* Sections des modules */
-.modules {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-}
-
-.module {
-    background: white;
-    border: 2px solid #007bff;
-    bord
+    searchInput.addEventListener("input", function () {
+        const query = searchInput.value.toLowerCase();
+        modules.forEach(module => {
+            const title = module.querySelector("h3").textContent.toLowerCase();
+            if (title.includes(query)) {
+                module.style.display = "block";
+            } else {
+                module.style.display = "none";
+            }
+        });
+    });
+});
