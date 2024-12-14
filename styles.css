@@ -1,0 +1,56 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f9fc;
+    color: #333;
+}
+
+header {
+    background-color: #3a87ad;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+.search-section {
+    margin: 20px;
+    text-align: center;
+}
+
+.search-section input {
+    width: 60%;
+    padding: 10px;
+    font-size: 16px;
+}
+
+.search-section button {
+    padding: 10px 20px;
+    background-color: #3a87ad;
+    color: white;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.search-section button:hover {
+    background-color: #2a647b;
+}
+
+.modules-section, .courses-section {
+    margin: 20px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    color: #3a87ad;
+}
+
+select, ul {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+}
